@@ -10,20 +10,33 @@
 
 <css-doodle grid="15">
     :doodle {
-    grid-gap: 1px;
+    grid-gap: 3px;
     width: 50em;
     height: 40em;
+    @shape: triangle;
     }
 
-    transition: .5s cubic-bezier(.17, .88, .3, 1.27);
+    <!-- This is the transition on the page load -->
+    transform: rotate(45deg) scale(1.5);
+    transition: .5s cubic-bezier(.175, .882, .32, 1.275);
     transition-delay: @rand(500ms);
-    transform: translateX(calc(var(--s) * 100%));
+    transform: translateY(calc(var(--s) * 100%));
 
     :doodle { --s: 0 }
     :doodle(:hover) { --s: 1 }
 
 
-    background: #60569e;
+    background: darkseagreen;
+
+    @nth(3n + 2) {
+    background: #e6437d;
+    }
+
+    @random {
+    background: linear-gradient(-32deg,  #5c7658 50%, #649d66 50%);
+    }
+
+
 </css-doodle>
 
 
