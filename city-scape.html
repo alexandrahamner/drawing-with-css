@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+    <link rel="stylesheet" href="cityscape.css">
+</head>
+<body>
+
+<css-doodle grid="15">
+    :doodle {
+    grid-gap: 1px;
+    width: 50em;
+    height: 40em;
+    }
+
+    transition: .5s cubic-bezier(.17, .88, .3, 1.27);
+    transition-delay: @rand(500ms);
+    transform: translateX(calc(var(--s) * 100%));
+
+    :doodle { --s: 0 }
+    :doodle(:hover) { --s: 1 }
+
+
+    background: #60569e;
+</css-doodle>
+
+
+</body>
+</html>
